@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Tony">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="/static/img/icons/icon-48x48.png">
+    <link rel="shortcut icon" th:href="@{/img/icons/icon-48x48.png}">
+    <link rel="canonical" href="https://demo-basic.adminkit.io/">
+
+    <title>Invoices</title>
+
+    <link href="/static/css/app.css" rel="stylesheet">
+    <link th:href="@{/css/app.css}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <nav id="sidebar" class="sidebar js-sidebar">
+        <div th:insert="~{fragments/simplebar-content :: sidebar-content}"></div>
+    </nav>
+    <div class="main">
+        <nav th:insert="fragments/nav-bar :: nav-bar"></nav>
+
+        <main class="content">
+            <div class="container-fluid p-0">
+
+                <div class="row">
+                    <div class="col-3 col-lg-2 col-xxl-8 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <h1 class="h3 mb-3">Рекомендуемое портфолио</h1>
+                                <h5 class="card-subtitle text-muted">Так же Вы можете составить портфолио сами,
+                                    воспользовавшись второй формой (справа).</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12 col-xl-3">
+                                        <label for="validationDefault04" class="form-label">Your Limit</label>
+                                        <select class="form-select" id="validationDefault04" required="">
+                                            <option selected="" disabled="" value="">($) Choose...</option>
+                                            <option>...</option>
+                                            <option>1,000.00 - 3,000.00</option>
+                                            <option>3,000.00 - 5,000.00</option>
+                                            <option>5,000.00 - 10,000.00</option>
+                                            <option>10,000.00 - 20,000.00</option>
+                                            <option>20,000.00 - 50,000.00</option>
+                                            <option>50,000.00 - 100,000.00</option>
+                                            <option>100,000.00 - 250,000.00</option>
+                                            <option>250,000.00 - 500,000.00</option>
+                                            <option>500,000.00 - 1,000,000.00</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-xl-9">
+                                        <label for="validationDefault04" class="form-label">Projects:</label>
+                                        <label class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" value="option1">
+                                            <span class="form-check form-switch">Brave (BAT) - browser with crypto wallet / advertising and subscription revenue</span>
+                                        </label>
+                                        <hr>
+                                        <label class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" value="option2">
+                                            <span class="form-check form-switch">
+												Velas (VLX)
+											</span>
+                                        </label>
+                                        <hr>
+                                        <label class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" value="option3">
+                                            <span class="form-check form-switch">DOT</span>
+                                        </label>
+                                        <hr>
+                                        <label class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" value="option3">
+                                            <span class="form-check form-switch">DOT</span>
+                                        </label>
+                                        <hr>
+                                        <label class="form-check form-switch">
+                                            <input class="form-check-input" type="radio" value="option3">
+                                            <span class="form-check form-switch">DOT</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <hr>
+                                <a>
+                                    При нажатии кнопки "Submit Form" ниже, Вы будете перенаправлены на страницу
+                                    выставления
+                                    счета
+                                </a>
+                                <hr>
+                                <button class="btn btn-danger">Submit Form</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-lg-6 col-xxl-4 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <div class="card-actions float-end">
+
+                                </div>
+                                <!--                                <h5 class="card-title mb-0">Markets</h5>-->
+                                <div id="datatables-reponsive_filter" class="dataTables_filter"><label><input
+                                        type="search" class="form-control form-control-sm" placeholder="Search"
+                                        aria-controls="datatables-reponsive"></label></div>
+                            </div>
+                            <table class="table table-sm table-striped my-0">
+                                <thead>
+                                <tr>
+                                    <th><i class="fas fa-star fa-sm cursor-pointer"></i></th>
+                                    <th>Coin</th>
+                                    <th>Price</th>
+                                    <th class="d-none d-xl-table-cell">Volume</th>
+                                    <th class="d-none d-xl-table-cell">Change</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><i class="fas fa-star fa-sm cursor-pointer"></i></td>
+                                    <td>ETH</td>
+                                    <td class="text-end">0.02309756</td>
+                                    <td class="d-none d-xl-table-cell text-end">427.563</td>
+                                    <td class="d-none d-xl-table-cell text-end text-success">+1.91</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-star fa-sm cursor-pointer"></i></td>
+                                    <td>XRP</td>
+                                    <td class="text-end">0.00002205</td>
+                                    <td class="d-none d-xl-table-cell text-end">132.691</td>
+                                    <td class="d-none d-xl-table-cell text-end text-success">+0.64</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-star fa-sm cursor-pointer"></i></td>
+                                    <td>ETC</td>
+                                    <td class="text-end">0.00077779</td>
+                                    <td class="d-none d-xl-table-cell text-end">32.982</td>
+                                    <td class="d-none d-xl-table-cell text-end text-danger">-6.71</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-star fa-sm cursor-pointer"></i></td>
+                                    <td>LTC</td>
+                                    <td class="text-end">0.00485685</td>
+                                    <td class="d-none d-xl-table-cell text-end">31.268</td>
+                                    <td class="d-none d-xl-table-cell text-end text-success">+1.88</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-star fa-sm cursor-pointer"></i></td>
+                                    <td>XMR</td>
+                                    <td class="text-end">0.00700518</td>
+                                    <td class="d-none d-xl-table-cell text-end">28.567</td>
+                                    <td class="d-none d-xl-table-cell text-end text-danger">-1.26</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="far fa-star fa-sm cursor-pointer"></i></td>
+                                    <td>BSC</td>
+                                    <td class="text-end">0.02105473</td>
+                                    <td class="d-none d-xl-table-cell text-end">25.960</td>
+                                    <td class="d-none d-xl-table-cell text-end text-success">+0.10</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="far fa-star fa-sm cursor-pointer"></i></td>
+                                    <td>ABC</td>
+                                    <td class="text-end">0.02613303</td>
+                                    <td class="d-none d-xl-table-cell text-end">21.597</td>
+                                    <td class="d-none d-xl-table-cell text-end text-success">-3.20</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="far fa-star fa-sm cursor-pointer"></i></td>
+                                    <td>TRX</td>
+                                    <td class="text-end">0.00000165</td>
+                                    <td class="d-none d-xl-table-cell text-end">14.106</td>
+                                    <td class="d-none d-xl-table-cell text-end text-danger">-0.61</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="far fa-star fa-sm cursor-pointer"></i></td>
+                                    <td>SC</td>
+                                    <td class="text-end">0.00000026</td>
+                                    <td class="d-none d-xl-table-cell text-end">9.531</td>
+                                    <td class="d-none d-xl-table-cell text-end text-success">+13.04</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="far fa-star fa-sm cursor-pointer"></i></td>
+                                    <td>OMG</td>
+                                    <td class="text-end">0.00019483</td>
+                                    <td class="d-none d-xl-table-cell text-end">8.820</td>
+                                    <td class="d-none d-xl-table-cell text-end text-success">+3.67</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="far fa-star fa-sm cursor-pointer"></i></td>
+                                    <td>CHR</td>
+                                    <td class="text-end">0.00000223</td>
+                                    <td class="d-none d-xl-table-cell text-end">7.428</td>
+                                    <td class="d-none d-xl-table-cell text-end text-danger">-4.21</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="far fa-star fa-sm cursor-pointer"></i></td>
+                                    <td>AVA</td>
+                                    <td class="text-end">0.00003667</td>
+                                    <td class="d-none d-xl-table-cell text-end">6.863</td>
+                                    <td class="d-none d-xl-table-cell text-end text-success">+13.60</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="far fa-star fa-sm cursor-pointer"></i></td>
+                                    <td>DASH</td>
+                                    <td class="text-end">0.00825500</td>
+                                    <td class="d-none d-xl-table-cell text-end">6.693</td>
+                                    <td class="d-none d-xl-table-cell text-end text-danger">-1.51</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="far fa-star fa-sm cursor-pointer"></i></td>
+                                    <td>LINK</td>
+                                    <td class="text-end">0.00043873</td>
+                                    <td class="d-none d-xl-table-cell text-end">6.290</td>
+                                    <td class="d-none d-xl-table-cell text-end text-success">+2.44</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="far fa-star fa-sm cursor-pointer"></i></td>
+                                    <td>EOS</td>
+                                    <td class="text-end">0.00028505</td>
+                                    <td class="d-none d-xl-table-cell text-end">6.144</td>
+                                    <td class="d-none d-xl-table-cell text-end text-danger">-1.62</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+    </div>
+</div>
+
+<script src="/static/js/app.js"></script>
+<script th:src="@{/js/app.js}"></script>
+
+</body>
+</html>
